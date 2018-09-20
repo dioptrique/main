@@ -1,460 +1,589 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 4 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>SaveGoals - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 4 - User Guide</h1></div><div id="content"><div class="sect1">
-<h2 id="user-guide"><a class="link" href="#user-guide">1. User Guide</a></h2>
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>SaveGoals - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>[1. Introduction](#section-1)</p>
+<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
 </div>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle"></div>
+<ul class="sectlevel1">
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#quick-start">2. Quick Start</a></li>
+<li><a href="#Features">3. Features</a>
+<ul class="sectlevel2">
+<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
+<li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
+<li><a href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></li>
+<li><a href="#viewing-your-saving-history-code-history-s-code">3.4. Viewing your saving history: <code>history -s</code></a></li>
+<li><a href="#editing-a-wish-code-edit-code">3.5. Editing a wish : <code>edit</code></a></li>
+<li><a href="#locating-persons-by-name-code-find-code">3.6. Locating persons by name: <code>find</code></a></li>
+<li><a href="#deleting-a-wish-code-delete-code">3.7. Deleting a wish : <code>delete</code></a></li>
+<li><a href="#selecting-a-person-code-select-code">3.8. Selecting a person : <code>select</code></a></li>
+<li><a href="#save-money-for-a-particular-wish-code-save-code">3.9. Save money for a particular wish: <code>save</code></a></li>
+<li><a href="#listing-entered-commands-code-history-c-code">3.10. Listing entered commands : <code>history -c</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.11. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.12. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.13. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.14. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.15. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.16. Encrypting data files <code>[coming in v2.0]</code></a></li>
+</ul>
+</li>
+<li><a href="#faq">4. FAQ</a></li>
+<li><a href="#command-summary">5. Command Summary</a></li>
+</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>[2. Quick Start](#section-2)</p>
-</div>
-<div class="paragraph">
-<p>[3. Features](#section-3)</p>
-</div>
-<div class="paragraph">
-<p>[3.1. Viewing help: <code>help</code>](#section-3.1)</p>
-</div>
-<div class="paragraph">
-<p>[3.2. Adding a wish: <code>add</code>](#section-3.2)</p>
-</div>
-<div class="paragraph">
-<p>[3.3. Listing all wishes: <code>list</code>](#section-3.3)</p>
-</div>
-<div class="paragraph">
-<p>[3.4. Viewing your saving history: <code>history</code>](#section-3.4)</p>
-</div>
-<div class="paragraph">
-<p>[3.5. Editing a wish: <code>edit</code>](#section-3.5)</p>
-</div>
-<div class="paragraph">
-<p>[3.6. Locating a wish: <code>find</code>](#section-3.6)</p>
-</div>
-<div class="paragraph">
-<p>[3.7. Deleting a wish: <code>delete</code>](#section-3.7)</p>
-</div>
-<div class="paragraph">
-<p>[3.8. Ranking your wishes: <code>rank</code>](#section-3.8)</p>
-</div>
-<div class="paragraph">
-<p>[3.9. Reordering the priority of your wishes: <code>swap</code>](#section-3.9)</p>
-</div>
-<div class="paragraph">
-<p>[3.10. Save money for a specific wish: <code>save</code>](#section-3.10)</p>
-</div>
-<div class="paragraph">
-<p>[3.11. Undoing previous command: <code>undo</code>](#section-3.11)</p>
-</div>
-<div class="paragraph">
-<p>[3.12. Redoing the previously undone command: <code>redo</code>](#section-3.12)</p>
-</div>
-<div class="paragraph">
-<p>[3.13. Clearing all entries: <code>clear</code>](#section-3.13)</p>
-</div>
-<div class="paragraph">
-<p>[3.14. Exiting the program: <code>exit</code>](#section-3.14)</p>
-</div>
-<div class="paragraph">
-<p>[4. FAQ](#section-4)</p>
-</div>
-<div class="paragraph">
-<p>[5. Command Summary](#section-5)</p>
-</div>
-<div class="sect2">
-<h3 id="1-introduction-a-id-section-1-a"><a class="link" href="#1-introduction-a-id-section-1-a">1.1. 1. Introduction &lt;a id="section-1"&gt;&lt;/a&gt;</a></h3>
-<div class="paragraph">
-<p>SaveGoals (SG) is a piggy bank in a digital app form, made for people who need a user-friendly solution for keeping track of their disposable income. Not only does SG keep records of your savings, it also allows users to set items as goals for users to work towards, serving as a way to cultivate the habit of saving. SG is made for people who have material wants in life, but are uncertain of purchasing said wants, by helping them to reserve disposable income so that they know they can spend on their wants. So what are you waiting for? Go to Section 2, “Quick Start” and start saving!</p>
+<p>SaveGoals (SG) is a piggy bank in a digital app form, made for people who need a user-friendly solution for keeping track of their disposable income. Not only does SG keep records of your savings, it also allows users to set items as goals for users to work towards, serving as a way to cultivate the habit of saving. SG is made for people who have material wants in life, but are uncertain of purchasing said wants, by helping them to reserve disposable income so that they know they can spend on their wants. So what are you waiting for? Go to Section 2, <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> and start saving!</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="2-quick-start-a-id-section-2-a"><a class="link" href="#2-quick-start-a-id-section-2-a">1.2. 2. Quick Start &lt;a id="section-2"&gt;&lt;/a&gt;</a></h3>
+</div>
+<div class="sect1">
+<h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ensure you have Java version 9 or later installed on your Computer.</p>
+<p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest savegoals.jar here.</p>
+<p>Download the latest <code>savegoals.jar</code> <a href="https://github.com/CS2103-AY1819S1-T16-1/main/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for your Save Goals app.</p>
 </li>
 <li>
-<p>Double-click the .jar file to start the app. The GUI should appear in a few seconds.
-![UI Mockup](<a href="http://octodex.github.com/images/octdrey-catburn.jpg" class="bare">http://octodex.github.com/images/octdrey-catburn.jpg</a>)</p>
+<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui" width="790">
+</div>
+</div>
 </li>
 <li>
-<p>Type the command in the command box and press Enter to execute it.</p>
+<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
+</li>
+<li>
+<p>Some example commands you can try:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Typing help and pressing enter will bring up a help window.</p>
+<p><strong><code>list</code></strong> : Lists all the items you have set as wishes (sorted by due date).</p>
+</li>
+<li>
+<p><strong><code>add</code></strong><code>n/uPhoneXX p/1000 d/5m</code> : adds an item “uPhoneXX” as a goal to be completed in 5 months.</p>
+</li>
+<li>
+<p><strong><code>help</code></strong>: displays list of command with usage.</p>
+</li>
+<li>
+<p><strong><code>clear</code></strong>: clears view</p>
+</li>
+<li>
+<p><strong><code>exit</code></strong> : exits the app</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Here are some commands that you can try:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code>: Lists all the items you have set as wishes (sorted by due date).</p>
-</li>
-<li>
-<p><code>save AMOUNT</code></p>
-</li>
-<li>
-<p><code>save 20.50</code>: adds $20.50 to your nearest goal that’s in-progress.</p>
-</li>
-<li>
-<p><code>add n/WISH_NAME p/PRICE t/[d/TIME_GIVEN]/[d/END_DATE]</code></p>
-</li>
-<li>
-<p><code>add n/uPhoneXX p/1000 d/5m</code>:  adds an item “uPhoneXX” as a goal to be completed in 5 months.</p>
-</li>
-<li>
-<p><code>add n/uPhoneXX p/1000 d/12112018</code>:  adds an item “uPhoneXX” as a goal that costs $1000 and sets it to be completed by 12-11-2018.</p>
-</li>
-<li>
-<p><code>clear</code>: clears view.</p>
-</li>
-<li>
-<p><code>help</code>: displays list of command with usage.</p>
-</li>
-<li>
-<p><code>exit</code>: exits the app command.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Refer to [Section 3, “Features”](#section-3) for details of each command.</p>
+<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
 </li>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="3-features-a-id-section-3-a"><a class="link" href="#3-features-a-id-section-3-a">1.3. 3. Features &lt;a id="section-3"&gt;&lt;/a&gt;</a></h3>
-<hr>
-<div class="sect3">
-<h4 id="command-format"><a class="link" href="#command-format">1.3.1. Command Format</a></h4>
+</div>
+<div class="sect1">
+<h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p>&gt;* Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user
-    * e.g. in <code>add WISH</code>, <code>WISH</code> is a parameter which can be used as add iPhone.
-* Items in square brackets are optional
-    * e.g. in <code>save AMOUNT [INDEX]</code>, <code>INDEX</code> is an optional parameter, since the save command can be used as <code>save 40</code>.
-* The <code>/</code> symbol between parameters means that you can use either of the parameters types in the command
-    * e.g. in <code>add WISH PRICE [TIME_GIVEN]/[START_DATE to END_DATE]</code>, you provide either the <code>TIME_GIVEN</code> parameter, <code>START_DATE</code> and <code>END_DATE</code> parameters, or none of them.
-&gt;* Items with <code>&#8230;&#8203;</code> after them can be used multiple times.
----</p>
+<p><strong>Command Format</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add WISH</code>, <code>WISH</code> is a parameter which can be used as add iPhone.</p>
+</li>
+<li>
+<p>Items in square brackets are optional e.g. in <code>save AMOUNT [INDEX]</code>, <code>INDEX</code> is an optional parameter, since the save command can be used as <code>save 40</code>.</p>
+</li>
+<li>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/broke</code>, <code>t/needs</code> etc.</p>
+</li>
+<li>
+<p>The <code>/</code> symbol between parameters means that you can use either of the parameters types in the command e.g. in <code>add WISH PRICE [TIME_GIVEN]/[START_DATE to END_DATE]</code>, you provide either the <code>TIME_GIVEN</code> parameter or <code>START_DATE</code> and <code>END_DATE</code> parameters.</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-1-viewing-help-code-help-code-a-id-section-3-1-a"><a class="link" href="#3-1-viewing-help-code-help-code-a-id-section-3-1-a">1.3.2. 3.1 Viewing help: <code>help</code> &lt;a id="section-3.1"&gt;&lt;/a&gt;</a></h4>
+</div>
+<div class="sect2">
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-2-adding-a-wish-code-add-code-a-id-section-3-2-a"><a class="link" href="#3-2-adding-a-wish-code-add-code-a-id-section-3-2-a">1.3.3. 3.2 Adding a wish: <code>add</code> &lt;a id="section-3.2"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds a wish to your wish list
+<p>Adds a person to the wish list<br>
 Format: <code>add n/WISH_NAME p/PRICE t/[d/TIME_GIVEN]/[d/END_DATE]</code></p>
 </div>
-<hr>
-<div class="paragraph">
-<p>&gt;* <code>[END_DATE]</code>: Specified in <em>ddmmyyyy</em> format. Separators are optional. Allowed separators are either dashes ‘-’, forward slashes ‘/’ or periods ‘.’
-&gt;* <code>[TIME_GIVEN]</code>: Specified in terms of days, weeks or months or years, prefixes marking such time periods are <em>‘d’, ‘w’, ‘m’</em> and <em>‘y’</em> respectively.
----</p>
+<div class="ulist TIP">
+<ul class="TIP">
+<li>
+<p><code>[END_DATE]</code>: Specified in <em>ddmmyyyy</em> format. Separators are optional. Allowed separators are either dashes ‘-’, forward slashes ‘/’ or periods ‘.’</p>
+</li>
+<li>
+<p><code>[TIME_GIVEN]</code>: Specified in terms of days, weeks or months or years, prefixes marking such time periods are <em>‘d’, ‘w’, ‘m’</em> and <em>‘y’</em> respectively.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Examples:
-* <code>add n/smallRice p/999 d/2d</code>
-* <code>add n/kfcBook_13inch p/2300 d/6m3w</code>
-* <code>add n/prinkles p/1.95 d/24/04/2020</code></p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/smallRice p/999 d/2d</code></p>
+</li>
+<li>
+<p><code>add n/kfcBook_13inch p/2300 d/6m3w</code></p>
+</li>
+<li>
+<p><code>add n/prinkles p/1.95 d/24/04/2020</code></p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-3-listing-all-wishes-code-list-code-a-id-section-3-3-a"><a class="link" href="#3-3-listing-all-wishes-code-list-code-a-id-section-3-3-a">1.3.4. 3.3 Listing all wishes: <code>list</code> &lt;a id="section-3.3"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all the goals you have set, sorted by date by default.
+<p>Shows a list of all the goals you have set, sorted by date by default.<br>
 Format: <code>list</code></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-4-viewing-your-saving-history-code-history-code-a-id-section-3-4-a"><a class="link" href="#3-4-viewing-your-saving-history-code-history-code-a-id-section-3-4-a">1.3.5. 3.4. Viewing your saving history: <code>history</code> &lt;a id="section-3.4"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="viewing-your-saving-history-code-history-s-code"><a class="link" href="#viewing-your-saving-history-code-history-s-code">3.4. Viewing your saving history: <code>history -s</code></a></h3>
 <div class="paragraph">
-<p>Shows a history of wishes you have accomplished, from newest to oldest.
-Format: <code>history</code></p>
+<p>Shows a history of wishes you have accomplished, from newest to oldest.<br>
+Format: <code>history -s</code></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-5-editing-a-wish-code-edit-code-a-id-section-3-5-a"><a class="link" href="#3-5-editing-a-wish-code-edit-code-a-id-section-3-5-a">1.3.6. 3.5 Editing a wish: <code>edit</code> &lt;a id="section-3.5"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="editing-a-wish-code-edit-code"><a class="link" href="#editing-a-wish-code-edit-code">3.5. Editing a wish : <code>edit</code></a></h3>
 <div class="paragraph">
-<p>Edits an existing wish in the list
+<p>Edits an existing wish in the wish list.<br>
 Format: <code>edit INDEX [n/WISH_NAME] [p/PRICE] [d/TIME_GIVEN]/[d/END_DATE] [t/TAG]</code></p>
 </div>
-<hr>
-<div class="paragraph">
-<p>&gt;* Edits the wish at the specified <code>INDEX</code>. <code>INDEX</code> refers to the index number shown in the displayed list of goals. <code>INDEX</code> must be a positive integer 1, 2, 3, …
-* At least one of the optional fields must be provided.
-* Existing values will be updated to the input values.
-* When editing tags, the existing tags of the wish will be removed i.e. adding of tags is not cumulative.
-&gt;* You can remove all tags by typing <code>t/</code> without specifying any tags after it.
----</p>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the wish at the specified <code>INDEX</code>. <code>INDEX</code> refers to the index number shown in the displayed list of goals. <code>INDEX</code> must be a positive integer 1, 2, 3, …</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the wish will be removed i.e. adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p>Examples:
-* <code>edit 1 n/Macbook Pro t/Broke wishes</code>
-Edits the name of the wish and the tag of the 1st goal to be Macbook Pro and Broke wishes respectively
-* <code>edit 2 p/22 d/22w</code>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 1 n/Macbook Pro t/Broke wishes</code><br>
+Edits the name of the wish and the tag of the 1st goal to be Macbook Pro and Broke wishes respectively</p>
+</li>
+<li>
+<p><code>edit 2 p/22 d/22w</code><br>
 Edits the price and time given to accomplish the 2nd goal to 22 (in the chosen currency) and 22 weeks respectively.</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-6-locating-a-wish-code-find-code-a-id-section-3-6-a"><a class="link" href="#3-6-locating-a-wish-code-find-code-a-id-section-3-6-a">1.3.7. 3.6 Locating a wish: <code>find</code> &lt;a id="section-3.6"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.6. Locating persons by name: <code>find</code></a></h3>
 <div class="paragraph">
-<p>Finds wishes which satisfy the given search predicate.
+<p>Finds wishes which satisfy the given search predicate.<br>
 Format: <code>find SEARCH_PREDICATE [MORE_SEARCH_PREDICATES]</code></p>
 </div>
-<hr>
-<div class="paragraph">
-<p>&gt;* The user can search using the following search predicates:
-    * <code>NAME</code>
-    * <code>DATE</code>
-    * <code>PRICE</code>
-    * <code>TAG</code>
-* <code>NAME`is the default search predicate.
-* The search is case insensitive e.g. watch will match Watch.
-* Only full words will be matched e.g. wat will not match watch.
-* Goals matching at least one keyword will be returned e.g. watch will return apple watch, pebble watch.
-* `DATE</code> is the creation date of the wish. It should match the correct format as specified in [Section 3.2 Date Format]().
-&gt;* <code>PRICE</code> is the sale price of the item. It should be a positive number corrected to the smallest denomination of the currency.
----</p>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The user can search using the following search predicates:</p>
+</li>
+<li>
+<p><code>NAME</code></p>
+</li>
+<li>
+<p><code>DATE</code></p>
+</li>
+<li>
+<p><code>PRICE</code></p>
+</li>
+<li>
+<p><code>TAG</code></p>
+</li>
+<li>
+<p>`NAME`is the default search predicate.</p>
+</li>
+<li>
+<p>The search is case insensitive e.g. watch will match Watch.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. wat will not match watch.</p>
+</li>
+<li>
+<p>Goals matching at least one keyword will be returned e.g. watch will return apple watch, pebble watch.</p>
+</li>
+<li>
+<p><code>DATE</code> is the creation date of the wish.</p>
+</li>
+<li>
+<p><code>PRICE</code> is the sale price of the item. It should be a positive number corrected to the smallest denomination of the currency.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p>Examples:
-* <code>find 22d</code>
-Returns wish with stipulated time given of 22 days.
-* <code>find watch t/broke wishes</code>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find 22d</code><br>
+Returns wish with stipulated time given of 22 days.</p>
+</li>
+<li>
+<p><code>find watch t/broke wishes</code><br>
 Returns any wish with name containing watch, with tag broke wishes.</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-7-deleting-a-wish-code-delete-code-a-id-section-3-7-a"><a class="link" href="#3-7-deleting-a-wish-code-delete-code-a-id-section-3-7-a">1.3.8. 3.7 Deleting a wish: <code>delete</code> &lt;a id="section-3.7"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="deleting-a-wish-code-delete-code"><a class="link" href="#deleting-a-wish-code-delete-code">3.7. Deleting a wish : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified wish from the list.
+<p>Deletes the specified wish from the list.<br>
 Format: <code>delete INDEX</code></p>
 </div>
-<hr>
-<div class="paragraph">
-<p>&gt;* <code>INDEX</code> refers to the index number shown in the displayed list.
-&gt;* <code>INDEX</code> must be a positive integer 1, 2, 3&#8230;&#8203;
----</p>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> refers to the index number shown in the displayed list.</p>
+</li>
+<li>
+<p><code>INDEX</code> must be a positive integer 1, 2, 3&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p>Examples:
-* <code>list</code>
-<code>delete 2</code>
-Deletes the 2nd wish in the list.
-* <code>find watch</code>
-<code>delete 1</code>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd wish in the list.</p>
+</li>
+<li>
+<p><code>find watch</code><br>
+<code>delete 1</code><br>
 Deletes the 1st wish in the results of the find command (if any).</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-8-ranking-your-wishes-code-rank-code-a-id-section-3-8-a"><a class="link" href="#3-8-ranking-your-wishes-code-rank-code-a-id-section-3-8-a">1.3.9. 3.8 Ranking your wishes: <code>rank</code> &lt;a id="section-3.8"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">3.8. Selecting a person : <code>select</code></a></h3>
 <div class="paragraph">
-<p>Ranks the wishes by specified wish field so that future savings are allocated in the order or ranking.
-Format: <code>rank WISH_FIELD [RANK_ORDER]</code></p>
+<p>Selects the wish identified by the index number used in the displayed wish list.<br>
+Format: <code>select INDEX</code></p>
 </div>
-<hr>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><code>RANK_ORDER</code> can be <code>-a</code>(ascending) or <code>-d</code>(descending). By default it is set to ascending.
----</p>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the wish and loads the Google search page for the wish at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p><code>INDEX</code> refers to the index number shown in the displayed wish list.</p>
+</li>
+<li>
+<p><code>INDEX</code> <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+</ul>
 </div>
-</blockquote>
 </div>
-<div class="paragraph">
-<p>Examples:
-* <code>rank Date -d</code>
-Ranks the wishes in descending order of date created.
-* <code>rank Price</code>
-Ranks the wishes in ascending order of sale price</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="3-9-reordering-the-priority-of-your-wishes-code-swap-code-a-id-section-3-9-a"><a class="link" href="#3-9-reordering-the-priority-of-your-wishes-code-swap-code-a-id-section-3-9-a">1.3.10. 3.9 Reordering the priority of your wishes: <code>swap</code> &lt;a id="section-3.9"&gt;&lt;/a&gt;</a></h4>
-<div class="paragraph">
-<p>Reorders the priority of wishes by swapping wishes at the specified indices.
-Format: `reorder OLD_INDEX NEW_INDEX `</p>
-</div>
-<hr>
-<div class="paragraph">
-<p>&gt;* A smaller numerical value for index indicates higher priority.
-&gt;* Indices must be a positive integer 1, 2, 3&#8230;&#8203;
----</p>
 </div>
 <div class="paragraph">
-<p>Examples:
-* <code>swap 7 1</code>
-Swaps wishes at index 7 and index 1
-* <code>swap 1 8</code>
-Swaps wishes at index 1 and index 8</p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>select 2</code><br>
+Selects the 2nd wish in the wish list.</p>
+</li>
+<li>
+<p><code>find phone</code><br>
+<code>select 1</code><br>
+Selects the 1st wish in the results of the <code>find</code> command.</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-10-save-money-for-a-specific-wish-code-save-code-a-id-section-3-10-a"><a class="link" href="#3-10-save-money-for-a-specific-wish-code-save-code-a-id-section-3-10-a">1.3.11. 3.10 Save money for a specific wish: <code>save</code> &lt;a id="section-3.10"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="save-money-for-a-particular-wish-code-save-code"><a class="link" href="#save-money-for-a-particular-wish-code-save-code">3.9. Save money for a particular wish: <code>save</code></a></h3>
 <div class="paragraph">
-<p>Channels savings for a specified wish.
+<p>Channels savings for a specified wish.<br>
 Format: <code>save AMOUNT [INDEX]</code></p>
 </div>
-<hr>
-<div class="paragraph">
-<p>&gt;* <code>INDEX</code> should be a positive integer 1, 2, 3…
-* <code>AMOUNT</code> should be a positive value to the smallest denomination of the currency.
-&gt;* If no <code>INDEX</code> is specified, money will be transferred to the wish which has the closest due date.
----</p>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> should be a positive integer 1, 2, 3…</p>
+</li>
+<li>
+<p><code>AMOUNT</code> should be a positive value to the smallest denomination of the currency.</p>
+</li>
+<li>
+<p>If no <code>INDEX</code> is specified, money will be transferred to the wish which has the closest due date.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:
-* <code>save 1000 1</code>
+* <code>save 1000 1</code><br>
 Adds $1000 into the item at index 1.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-11-undoing-previous-command-code-undo-code-a-id-section-3-11-a"><a class="link" href="#3-11-undoing-previous-command-code-undo-code-a-id-section-3-11-a">1.3.12. 3.11 Undoing previous command: <code>undo</code> &lt;a id="section-3.11"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="listing-entered-commands-code-history-c-code"><a class="link" href="#listing-entered-commands-code-history-c-code">3.10. Listing entered commands : <code>history -c</code></a></h3>
 <div class="paragraph">
-<p>Restores SaveGoals to the state before the previous undoable command was executed.
+<p>Lists all the commands that you have entered in reverse chronological order.<br>
+Format: <code>history -c</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.11. Undoing previous command : <code>undo</code></a></h3>
+<div class="paragraph">
+<p>Restores SaveGoals to the state before the previous undoable command was executed.<br>
 Format: <code>undo</code></p>
 </div>
-<hr>
-<div class="quoteblock">
-<blockquote>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>Undoable commands: commands that modify SaveGoals content (<code>add, delete, edit, save, rank</code>)
----</p>
+<p>Undoable commands: commands that modify SaveGoals content (<code>add, delete, edit, save</code>).</p>
 </div>
-</blockquote>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Examples:
-* <code>delete 1</code>
-<code>list `
-`undo</code>
-Reverses the <code>delete 1</code> command.
-* <code>list</code>
-<code>find 22d</code>
-<code>undo</code>
-The <code>undo</code> command fails as there are no undoable commands executed previously.
-* <code>delete 1</code>
-<code>clear</code>
-<code>undo</code>
-<code>undo</code>
-The first <code>undo</code> reverses the <code>clear</code> command. The second <code>undo</code> reverses the <code>delete 1</code> command.</p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>list</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>select 1</code><br>
+<code>list</code><br>
+<code>undo</code><br>
+The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-12-redoing-the-previously-undone-command-code-redo-code-a-id-section-3-12-a"><a class="link" href="#3-12-redoing-the-previously-undone-command-code-redo-code-a-id-section-3-12-a">1.3.13. 3.12 Redoing the previously undone command: <code>redo</code> &lt;a id="section-3.12"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.12. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.
+<p>Reverses the most recent <code>undo</code> command.<br>
 Format: <code>redo</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:
-* <code>delete 1</code>
-<code>list</code>
-<code>undo</code>
-<code>redo</code>
-<code>undo</code> reverses the <code>delete 1</code> command. Then, the <code>redo</code> command reapplies the <code>delete 1</code> command.
-* <code>delete 1</code>
-<code>redo</code>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>redo</code><br>
 The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-13-clearing-all-entries-code-clear-code-a-id-section-3-13-a"><a class="link" href="#3-13-clearing-all-entries-code-clear-code-a-id-section-3-13-a">1.3.14. 3.13 Clearing all entries: <code>clear</code> &lt;a id="section-3.13"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.13. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from SaveGoals.
+<p>Clears all entries from SaveGoals.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="3-14-exiting-the-program-code-exit-code-a-id-section-3-14-a"><a class="link" href="#3-14-exiting-the-program-code-exit-code-a-id-section-3-14-a">1.3.15. 3.14 Exiting the program: <code>exit</code> &lt;a id="section-3.14"&gt;&lt;/a&gt;</a></h4>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.14. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
-<p>Exits the program.
+<p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.15. Saving the data</a></h3>
+<div class="paragraph">
+<p>SaveGoals data are saved in the hard disk automatically after any command that changes the data.<br>
+There is no need to save manually.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="4-faq-a-id-section-4-a"><a class="link" href="#4-faq-a-id-section-4-a">1.4. 4. FAQ &lt;a id="section-4"&gt;&lt;/a&gt;</a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.16. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p><em>{explain how the user can enable/disable data encryption}</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Q</strong>: How do I transfer my data to another computer?
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous SaveGoals folder.</p>
+<p><strong>Add</strong>  <code>add n/WISH_NAME p/PRICE t/[d/TIME_GIVEN]/[d/END_DATE]</code><br>
+e.g. <code>add n/kfcBook_13inch p/2300 d/6m3w</code></p>
+</li>
+<li>
+<p><strong>Clear</strong> : <code>clear</code></p>
+</li>
+<li>
+<p><strong>Delete</strong> : <code>delete INDEX</code><br>
+e.g. <code>delete 3</code></p>
+</li>
+<li>
+<p><strong>Edit</strong> : <code>edit INDEX [n/WISH_NAME] [p/PRICE] [d/TIME_GIVEN]/[d/END_DATE] [t/TAG]</code><br>
+e.g. <code>edit 1 n/Macbook Pro t/Broke wishes</code></p>
+</li>
+<li>
+<p><strong>Find</strong> : <code>find SEARCH_PREDICATE [MORE_SEARCH_PREDICATES]</code><br>
+e.g. <code>find 22d</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+<li>
+<p><strong>Help</strong> : <code>help</code></p>
+</li>
+<li>
+<p><strong>Select</strong> : <code>select INDEX</code><br>
+e.g.<code>select 2</code></p>
+</li>
+<li>
+<p><strong>Save</strong> : <code>save AMOUNT [INDEX]</code><br>
+e.g. <code>save 1000 1</code></p>
+</li>
+<li>
+<p><strong>Savings History</strong> : <code>history -s</code></p>
+</li>
+<li>
+<p><strong>Command History</strong> : <code>history -c</code></p>
+</li>
+<li>
+<p><strong>Undo</strong> : <code>undo</code></p>
+</li>
+<li>
+<p><strong>Redo</strong> : <code>redo</code></p>
+</li>
+<li>
+<p><strong>Exit</strong> : <code>exit</code></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="5-command-summary-a-id-section-5-a"><a class="link" href="#5-command-summary-a-id-section-5-a">1.5. 5. Command Summary &lt;a id="section-5"&gt;&lt;/a&gt;</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Help: <code>help</code></p>
-</li>
-<li>
-<p>Add: <code>add n/WISH_NAME p/PRICE t/[d/TIME_GIVEN]/[d/END_DATE]</code>
-e.g. add n/kfcBook_13inch p/2300 d/6m3w</p>
-</li>
-<li>
-<p>List: <code>list</code></p>
-</li>
-<li>
-<p>History: <code>history</code></p>
-</li>
-<li>
-<p>Edit: <code>edit INDEX [n/WISH_NAME] [p/PRICE] [d/TIME_GIVEN]/[d/END_DATE] [t/TAG]</code>
-e.g. edit 1 n/Macbook Pro t/Broke wishes</p>
-</li>
-<li>
-<p>Find: <code>find SEARCH_PREDICATE [MORE_SEARCH_PREDICATES]</code>
-e.g. find 22d</p>
-</li>
-<li>
-<p>Delete: <code>delete INDEX</code>
-e.g. delete 1</p>
-</li>
-<li>
-<p>Rank: <code>rank WISH_FIELD [RANK_ORDER]</code>
-e.g. rank Date -d</p>
-</li>
-<li>
-<p>Swap: <code>swap OLD_INDEX NEW_INDEX</code>
-e.g. swap 1 8</p>
-</li>
-<li>
-<p>Save: <code>save AMOUNT [INDEX]</code>
-e.g. save 1000 1</p>
-</li>
-<li>
-<p>Undo: <code>undo</code></p>
-</li>
-<li>
-<p>Redo: <code>redo</code></p>
-</li>
-<li>
-<p>Clear: <code>clear</code></p>
-</li>
-<li>
-<p>Exit: <code>exit</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-09-20 03:29:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-09-20 06:07:59 UTC</div></div></div></body></html>
