@@ -1,4 +1,4 @@
-= WishBook Level 4 - Developer Guide
+= WishBook - Developer Guide
 :site-section: DeveloperGuide
 :toc:
 :toc-title:
@@ -250,7 +250,7 @@ The `Storage` component,
 [[Design-Commons]]
 === Common classes
 
-Classes used by multiple components are in the `seedu.wishbook.commons` package.
+Classes used by multiple components are in the `seedu.WishBook.commons` package.
 
 == Implementation
 
@@ -311,7 +311,7 @@ when the wish is created.
 ==== Current Implementation
 
 The undo/redo mechanism is facilitated by `VersionedWishBook`.
-It extends `WishBook` with an undo/redo history, stored internally as an `wishBookStateList` and `currentStatePointer`.
+It extends `WishBook` with an undo/redo history, stored internally as an `WishBookStateList` and `currentStatePointer`.
 Additionally, it implements the following operations:
 
 * `VersionedWishBook#commit()` -- Saves the current wish book state in its history.
@@ -326,16 +326,16 @@ Step 1. The user launches the application for the first time. The `VersionedWish
 
 image::UndoRedoStartingStateListDiagram.png[width="800"]
 
-Step 2. The user executes `delete 5` command to delete the 5th wish in the wish book. The `delete` command calls `Model#commitWishBook()`, causing the modified state of the url book after the `delete 5` command executes to be saved in the `wishBookStateList`, and the `currentStatePointer` is shifted to the newly inserted url book state.
+Step 2. The user executes `delete 5` command to delete the 5th wish in the wish book. The `delete` command calls `Model#commitWishBook()`, causing the modified state of the url book after the `delete 5` command executes to be saved in the `WishBookStateList`, and the `currentStatePointer` is shifted to the newly inserted url book state.
 
 image::UndoRedoNewCommand1StateListDiagram.png[width="800"]
 
-Step 3. The user executes `add n/David ...` to add a new wish. The `add` command also calls `Model#commitWishBook()`, causing another modified wish book state to be saved into the `wishBookStateList`.
+Step 3. The user executes `add n/David ...` to add a new wish. The `add` command also calls `Model#commitWishBook()`, causing another modified wish book state to be saved into the `WishBookStateList`.
 
 image::UndoRedoNewCommand2StateListDiagram.png[width="800"]
 
 [NOTE]
-If a command fails its execution, it will not call `Model#commitWishBook()`, so the wish book state will not be saved into the `wishBookStateList`.
+If a command fails its execution, it will not call `Model#commitWishBook()`, so the wish book state will not be saved into the `WishBookStateList`.
 
 Step 4. The user now decides that adding the wish was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoWishBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous wish book state, and restores the url book to that state.
 
@@ -351,13 +351,13 @@ image::UndoRedoSequenceDiagram.png[width="800"]
 The `redo` command does the opposite -- it calls `Model#redoWishBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the wish book to that state.
 
 [NOTE]
-If the `currentStatePointer` is at index `wishBookStateList.size() - 1`, pointing to the latest wish book state, then there are no undone url book states to restore. The `redo` command uses `Model#canRedoWishBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+If the `currentStatePointer` is at index `WishBookStateList.size() - 1`, pointing to the latest wish book state, then there are no undone url book states to restore. The `redo` command uses `Model#canRedoWishBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
 
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the wish book, such as `list`, will usually not call `Model#commitWishBook()`, `Model#undoWishBook()` or `Model#redoWishBook()`. Thus, the `wishBookStateList` remains unchanged.
+Step 5. The user then decides to execute the command `list`. Commands that do not modify the wish book, such as `list`, will usually not call `Model#commitWishBook()`, `Model#undoWishBook()` or `Model#redoWishBook()`. Thus, the `WishBookStateList` remains unchanged.
 
 image::UndoRedoNewCommand3StateListDiagram.png[width="800"]
 
-Step 6. The user executes `clear`, which calls `Model#commitWishBook()`. Since the `currentStatePointer` is not pointing at the end of the `wishBookStateList`, all wish book states after the `currentStatePointer` will be purged. We designed it this way because it no longer makes sense to redo the `add n/David ...` command. This is the behavior that most modern desktop applications follow.
+Step 6. The user executes `clear`, which calls `Model#commitWishBook()`. Since the `currentStatePointer` is not pointing at the end of the `WishBookStateList`, all wish book states after the `currentStatePointer` will be purged. We designed it this way because it no longer makes sense to redo the `add n/David ...` command. This is the behavior that most modern desktop applications follow.
 
 image::UndoRedoNewCommand4StateListDiagram.png[width="800"]
 
@@ -432,7 +432,7 @@ The `redo` command does the opposite -- it calls `Model#redoWishBook()`, which s
 [NOTE]
 If the `currentStatePointer` is at index `wishStateList.size() - 1`, pointing to the latest wish transaction state, then there are no undone wish transaction states to restore. The `redo` command uses `Model#canRedoWishBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
 
-Step 4. The user then decides to execute the command `list`. Commands that do not modify the state of the `WishBook`, such as `list`, will usually not call `Model#commitWishBook()`, `Model#undoWishBook()` or `Model#redoWishBook()`. Thus, the `wishBookStateList` remains unchanged.
+Step 4. The user then decides to execute the command `list`. Commands that do not modify the state of the `WishBook`, such as `list`, will usually not call `Model#commitWishBook()`, `Model#undoWishBook()` or `Model#redoWishBook()`. Thus, the `WishBookStateList` remains unchanged.
 
 Step 5. The user finally exits the app by clicking on the close button. The most recent state of the `WishTransaction` will be converted into xml format via the the `XmlWishTransactions` object and be saved into the same file path it was first retrieved from.
 
@@ -1116,7 +1116,6 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 |`*` |user |view all past savings for a particular wish |have a better idea of my saving habits for a wish
 |=======================================================================
 
-_{More to be added}_
 
 [appendix]
 == Use Cases
@@ -1476,8 +1475,6 @@ Use case ends.
 +
 Use case ends.
 
-_{More to be added}_
-
 [appendix]
 == Non Functional Requirements
 
@@ -1492,8 +1489,6 @@ _{More to be added}_
 . Command Line Interface (CLI) is the primary mode of input. GUI is used mainly for visual feedback rather than to collect input. Usage of mouse should be minimized.
 . The software should follow the Object-Oriented Paradigm.
 . The software should work without requiring an installer.
-
-_{More to be added}_
 
 [appendix]
 == Glossary
@@ -1532,26 +1527,131 @@ These instructions only provide a starting point for testers to work on; testers
 .. Re-launch the app by double-clicking the jar file. +
    Expected: The most recent window size and location is retained.
 
-_{ more test cases ... }_
-
 === Deleting a wish
 
-. Deleting a wish while all wishes are listed
-
-.. Prerequisites: List all wishes using the `list` command. Multiple wishes in the list.
+.  Deleting a wish while all wishes are listed
+.. Prerequisites: List all wishes using the list command. Multiple wishes in the list. Wish at index 1 should be fulfilled.
 .. Test case: `delete 1` +
-   Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
-.. Test case: `delete 0` +
-   Expected: No wish is deleted. Error details shown in the status message. Status bar remains the same.
-.. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +
+   Expected: First wish is deleted from the list. Details of the deleted wish shown in the status message. Unused funds will not be updated as the product has already been bought. Deleted wish details and amount in unused funds shown in status message. Timestamp in the status bar is updated.
+.. Test case: `delete 2` +
+   Expected: Second wish is deleted. Money in the wish will be transferred to unused funds. Deleted wish details and amount in unused funds shown in status message. Timestamp in the status bar is updated.
+.. Test Case: `delete` +
+   Expected: Error. Invalid command format message shown in unused funds.
+.. Test Case: `delete -1` +
+   Expected: Error. Invalid command format message shown in unused funds.
+.. Other incorrect delete commands to try: `delete x` (where x is larger than the list size) +
+   Expected: Error. Invalid wish provided message in message status.
+
+
+=== Saving to a wish
+
+. Saving to a wish
+.. Prerequisites: Add a new wish with the add command with a date earlier than the earliest wish in the WishBook. If the current date is past the earliest wish’s date, delete the first wish until this is no longer true and then add a new wish earlier than the earliest wish in the WishBook.
+.. Test case: `save 1 0` +
+   Expected: 0.00 saved to first wish. Details of saved amount and the remaining amount left for completion shown in the status message. Timestamp in the status bar is updated.
+.. Test case: `save 1 0.01` +
+   Expected: 0.01 saved to first wish. Details of saved amount and the remaining amount left for completion shown in the status message. Timestamp in the status bar is updated.
+.. Test case: `save 1 -0.01` +
+   Expected: 0.01 removed from first wish. Details of removed amount and the remaining amount left for completion shown in the status message. Timestamp in the status bar is updated.
+.. Test case: `save 1 [VALUE LARGER THAN WISH PRICE]` +
+   Expected: Wish will be 100% and fulfilled. Details of the excess amount saved and the unused funds value shown in status message.
+.. Test case: `save 1 5` +
+   Expected: Unable to save to wish. Wish already fulfilled message shown in status message. Timestamp in status bar is updated.
+.. Other incorrect delete commands to try: `save 2 0.001`, `save 2 12.`, `save 2 12@` +
    Expected: Similar to previous.
 
-_{ more test cases ... }_
+=== Moving funds between wishes
+.  Moving funds between 2 wishes:
+.. Prerequisites: Wish at index 1 should be fulfilled. If it is not, `save` until it is. The other wishes used in the subsequent commands should not be fulfilled.
+.. Test case: `move 1 2 50` +
+   Expected: No money moved from wish 1 to 2. Wish already fulfilled status message shown.
+.. Test case: `move 2 3 [AMOUNT SMALLER THAN SAVED AMOUNT AT FROM_INDEX]` +
+   Expected: Specified amount moved from wish 2 to wish 3. Moved message shown in status message. Timestamp in status bar is updated.
+.. Test case: `move 2 3 [AMOUNT LARGER THAN SAVED AMOUNT AT FROM_INDEX]` +
+   Expected: No money moved from wish 1 to 2. `FROM_INDEX` does not contain the specified amount shown in status message.
+.. Test case: `move 2 3 [AMOUNT LARGER THAN SAVED AMOUNT AT TO_INDEX]` +
+   Expected: Money moved from wish 2 to 3. Wish 3 is fulfilled. Excess money goes to unused funds(index 0).  Moved amount, excess and updated unused funds shown in status message. Timestamp in status bar is updated.
+   ed. Incorrect move commands to try: `move 2 3 -50`, `move 2 3 0.0001`
+   Expected: No money will be moved. Appropriate error message shown in status message.
+
+
+=== Adding a wish
+
+. Adding to a wish
+
+. Positive test cases
+..   Prerequisites: None. Duplicate Wishes can exist and have the same user-defined properties.
+..   Test case: `add n/PS4 Golden Pro d/25/12/2018 p/499.99` +
+   Expected: A new Wish named “PS4 Golden Pro”, priced at $499.99, and expiry date set to 25th December 2018, default URL of “www.amazon.com” will be added to the list of Wishes. Status message shows the details of the newly added Wish.
+.. Test case:  `add n/PS4 Golden Pro d/25/12/2018 p/499.99 t/technology` +
+   Expected: A new Wish named “PS4 Golden Pro”, priced at $499.99, and expiry date set to 25th December 2018, default URL of “www.amazon.com”, with a tag named “technology”, will be added to the list of Wishes. Status message shows the details of the newly added Wish. Selecting on the newly added Wish will also bring up the Amazon’s homepage on the right side of the Detail Panel.
+.. Test case: `add n/PS4 Golden Pro a/60d p/499.99` +
+   Expected: A new Wish named “PS4 Golden Pro”, priced at $499.99, and expiry date set to your current date plus 60 days, default URL of “www.amazon.com” will be added to the list of Wishes. Status message shows the details of the newly added Wish. Selecting on the newly added Wish will also bring up the Amazon’s homepage on the right side of the Detail Panel.
+.. Test case: `add n/PS4 Golden Pro a/2y p/499.99 u/www.google.com` +
+   Expected: A new Wish named “PS4 Golden Pro”, priced at $499.99, and expiry date set to your current date plus 2 years, default URL of “www.amazon.com” will be added to the list of Wishes. Status message shows the details of the newly added Wish. Selecting on the newly added Wish will also bring up the Google search engine webpage on the right side of the Detail Panel.
+
+.  Negative test cases
+.. Prerequisites: None.
+.. Test case: `add n/PS’4 Golden Pro a/30d p/499.99` +
+   Expected: Status message shows that a Wish’s name can only contain alphanumeric numbers and spaces, and should not be blank.
+.. Test case: `add n/ a/30d p/499.99` +
+   Expected: Status message shows that a Wish’s name can only contain alphanumeric numbers and spaces, and should not be blank.
+.. Test case: `add n/PS4 Golden Pro a/30d3y p/499.99` +
+   Expected: Status message shows the given time format is invalid, and also shows the user’s time input.
+.. Test case: `add n/PS4 Golden Pro d/30.30.9999 p/499.99` +
+   Expected: Status message shows that the time should be of format: dd/mm/yy.
+.. Test case: `add n/PS4 Golden Pro a/3d p/499.9999999` +
+   Expected: Status message states that price value should only contain numbers, and at most two numbers after the decimal point.
+.. Test case: `add n/PS4 Golden Pro a/3d p/abc.de` +
+   Expected: Status message states that price value should only contain numbers, and at most two numbers after the decimal point.
+.. Test case: `add n/PS4 Golden Pro a/-1d p/22.22` +
+   Expected: Status message states that the given expiry date should be after the current date.
+.. Test case: `add n/PS4 Golden Pro d/25/12/1111 p/22.22` +
+   Expected: Status message states that the given expiry date should be after the current date.
+.. Test case: `add n/PS4 Golden Pro a/1d` +
+   Expected: Status message states that this is an invalid command format, and shows the correct usage of add command.
+.. Test case: `add n/PS4 Golden Pro d/25/12/2018 p/22.22 u/abc def.com` +
+   Expected: Status message states that URLs cannot have whitespaces.
+
+=== Listing out wishes
+
+. Listing out wishes in the list
+.  Prerequisites: Have both completed (amount saved more than price) and uncompleted wishes.
+.. Test case: `list` +
+   Expected: All wishes in WishBook is listed.
+.. Test case: `list -c` +
+   Expected: Only wishes that are completed will be shown on the list.
+.. Test case: `list -u` +
+   Expected: Only wishes that are uncompleted will be shown on the list.
+
+=== Finding wishes
+
+. Finding a wish by name, tags or remark:
+
+. Prerequisites: None
+.. Test case: `find r/Alice` +
+Expected: Returns all the wishes whose remark contains “Alice” case insensitive. Number of wishes found is listed in status message. Only matched wishes visible in WishList.
+.. Test case: `find t/neigh t/paren` +
+Expected: Returns all the wishes whose tags contain the keywords “neigh” or “paren”. Number of wishes found is listed in status message. Only matched wishes visible in WishList.
+.. Test case: `find n/EVG t/PS` +
+Expected: Returns all wishes whose name contains “EVG” and whose tag contains “PS” case insensitve. Number of wishes found is listed in status message. Only matched wishes visible in WishList.
+.. Test case: `find n/EVG n/PS t/neigh t/paren` +
+Expected: Returns all wishes whose name contains (“EVG” or “PS”) and  (“neigh” or “paren”). Number of wishes found is listed in status message. Only matched wishes visible in WishList.
+.. Test case: `find`  +
+Expected: Invalid command. Invalid command format message shown in status message.
+.. Other incorrect delete commands to try: `find test`, `find d/22/10/1996`. +
+Expected: Similar to previous.
+
 
 === Saving data
 
 . Dealing with missing/corrupted data files
-
-.. _{explain how to simulate a missing/corrupted file and the expected behavior}_
-
-_{ more test cases ... }_
+.. Prerequisites: content of WishBook.xml and wishTransaction.xml files will be used to load data for a new session of WishBook. If data is missing from any of these files, data will be lost from subsequent sessions of WishBook unless the xml file data is restored and in proper format.
+.. Test case (gracefully exiting app assuming that WishBook contains more than 1 wish): `save 1 10` and then `exit` +
+Expected: when a new session is started, WishBook should contain all wishes from the previous session. Wish in which the save command is performed for should have its saving history and save amount updated.
+.. Test case (WishBook data and wishTransaction data should be backed up everytime the state of WishBook changes): `save 1 10` +
+Expected: assuming WishBook contains more than 1 wish, the execution of the save command should cause the WishBook.xml and wishTransaction.xml files to be updated with a new save amount.
+.. Test case (empty WishBook to simulate missing data) Copy the contents of the empty xml file after executing the clear command to simulate missing file data into WishBook.xml at the file path specified in the save location (which is specified in the preferences.json file) +
+Expected: When the WishBook is loaded, all wish data should be absent.
+.. Test case (corrupted data): delete data for 1 wish currently in WishBook by editing the WishBook.xml file. +
+Expected: assuming that the data format of the xml file is valid, WishBook should load the content of the WishBook based on the data present in WishBook.xml file (without the deleted wish data). If the data format of the xml file is invalid the WishBook will not load properly and an error message should appear.

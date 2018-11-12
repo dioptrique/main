@@ -17,7 +17,7 @@ endif::[]
 
 WishBook is a desktop application used to help one allocate one's disposable income to a number of desired products.
 WishBook enables users to better organize their desirables, allowing them to visualize their spendings in a pleasant way.
-The user interacts with it by using a Command Line Interface (CLI), and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.
+The user interacts with it by using a Command Line Interface (CLI), and it has a GUI created with JavaFX.
 
 WishBook was developed by the GaveSoals team, a team of students based in the School of Computing, National University of Singapore.
 

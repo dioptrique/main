@@ -203,9 +203,10 @@ Returns any wish whose name contains _watch_, and whose tags contains _broke wis
 Returns any wish whose name contains _wat_ or _balloon_, and whose tags contains
 _important_.
 // end::find[]
+
 === Delete a wish : `delete`
 
-Deletes the specified wish from the list. +
+Deletes the specified wish from the list and moves any funds in that wish to `unusedFunds`. +
 Format: `delete INDEX`
 
 ****
